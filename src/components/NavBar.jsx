@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import React,{ useState } from 'react'
 
 
 
-function NavBar() {
+const NavBar = () => {
   const [count, setCount] = useState(0)
 
   return (
@@ -12,4 +12,4 @@ function NavBar() {
   )
 }
 
-export default PostCard
+export default NavBar
