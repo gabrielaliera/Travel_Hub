@@ -1,0 +1,32 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary);
+    padding: 10px 5% 10px 20px;
+}
+
+nav a {
+    color: #f2f2f2;
+    margin: 10px 20px 10px 0;
+    display: inline-block;
+}
+
+nav h1 {
+    color: #fff;
+    margin-left: 10%;
+}
+
+nav .search-input {
+    padding-left: 10px;
+    border-radius: 15px;
+    width: 25%;
+    font-size: 16px;
+    height: 30px;
+}
+
+nav span {
+    margin-right: 30px;
+    font-weight: bold;
+    color: #fff;
+}
