@@ -1,13 +1,16 @@
 import { useState } from 'react'
+import "./PostCard.css"
 
-import './App.css'
 
-function PostCard() {
-  const [count, setCount] = useState(0)
+const PostCard = ({id, title, content, date, imageURL, upvote}) => {
 
   return (
-    <div className="Card">
-      
+    <div className="post">
+        <p>Posted by You - {date}</p>
+        <h2>{title}</h2>
+        {content ? <h3>{content}</h3> : null}
+        {imageURL ? <img src={imageURL} alt={title}/> : null}
+        {upvote}
     </div>
   )
 }
