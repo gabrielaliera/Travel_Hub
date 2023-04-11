@@ -1,15 +1,17 @@
-import React,{ useState } from 'react'
-
-
+import React from 'react'
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="NavBar">
-      <h1>Nav</h1>
+      <h1>Travel Hub</h1>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to='/create'> Create Post</Link></li>
+      </ul>
     </div>
   )
 }
 
-export default NavBar
+export default NavBar;
