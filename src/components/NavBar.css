@@ -6,15 +6,25 @@ nav {
     padding: 10px 5% 10px 20px;
 }
 
+nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+nav li {
+    margin-right: 10px;
+}
+
 nav a {
-    color: #f2f2f2;
+    color: #199d6f;
     margin: 10px 20px 10px 0;
     display: inline-block;
 }
 
 nav h1 {
-    color: #fff;
+    color: #aa2222;
     margin-left: 10%;
+    font-size: 50px;
 }
 
 nav .search-input {
@@ -28,5 +38,5 @@ nav .search-input {
 nav span {
     margin-right: 30px;
     font-weight: bold;
-    color: #fff;
+    color: #a51b1b;
 }
