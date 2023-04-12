@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from "react";
 import PostCard from "../components/PostCard";
+import {Link} from 'react-router-dom';
 import { supabase } from "../supabaseClient";
 
 const Home = () => {
@@ -10,8 +11,9 @@ const Home = () => {
             const {data} = await supabase.from("Posts").select("*");
             
             if(data){
-                setPosts(data);
                 console.log(data);
+                setPosts(data);
+                
             }
         }
 
@@ -24,13 +26,15 @@ const Home = () => {
         <div>
           {posts && posts.length > 0 ?
                 posts.map((post,index) => 
-                <PostCard key={post.id}
-                    id={post.id}
-                    title={post.title}
-                    content={post.content}
-                    date={post.created_at}
-                    imageURL={post.image_url}
-                    upvote={post.upvote}/>
+                <Link to={"/post/" + post.id}>
+                    <PostCard key={post.id}
+                        id={post.id}
+                        title={post.title}
+                        content={post.content}
+                        date={post.created_at}
+                        imageURL={post.image_url}
+                        upvote={post.upvotes}/>
+                </Link>
                 ) : null}
         </div>
     );
