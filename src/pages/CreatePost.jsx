@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { supabase } from '../supabaseClient'
 
 
-const CreatePost = () => {
+const CreatePost = ({userID}) => {
 
     const [post, setPost] = useState({title: "", content: "", image_url: ""})
 
@@ -21,7 +21,8 @@ const CreatePost = () => {
     
        await supabase
         .from('Posts')
-        .insert({title: post.title, 
+        .insert({userID: userID,
+                 title: post.title, 
                  content: post.content, 
                  image_url: post.image_url})
         .select();
