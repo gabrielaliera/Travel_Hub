@@ -23,3 +23,77 @@ body {
   color: #333;
   background: #f2f2f2;
 }
+
+.post-page {
+  width: 100%;
+  padding: 10px 20px;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 6px;
+  position: relative;
+  margin: 12px 20px 12px 20px;
+  justify-content: space-between;
+}
+
+.post-page a {
+  text-decoration: none;
+  color: black;
+}
+
+.post-page img {
+  max-height: 300px;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.post-page p {
+  text-align: left;
+  color: black;
+}
+
+.post-page h2 {
+  text-align: left;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: rgb(7, 7, 10);
+}
+
+.post-page h3 {
+  text-align: left;
+  font-family: sans-serif;
+  font-size: 15px;
+  color: rgb(7, 7, 10);
+}
+.post-page i {
+  color: #bbb;
+  margin-left: 10px;
+  font-size: 1.2em;
+  padding: 6px;
+  background: #eee;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.post-page .buttons {
+  width: 100%;
+  margin: 20px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-page .upvotes {
+  display: flex;s
+  gap: 5px;
+}
+
+.post-page .upvote-button {
+  border: 0px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.post-page .upvote-button:active {
+  transform: translateY(3px);
+}
+
