@@ -1,9 +1,9 @@
 .post {
     width: 100%;
     padding: 10px 20px;
-    background: #fff;
+    background: #f3f2ef;
     box-sizing: border-box;
-    border-radius: 6px;
+    border-radius: 10px;
     position: relative;
     margin: 12px 20px 12px 20px;
     justify-content: space-between;
@@ -14,21 +14,21 @@
    
   .post p {
     text-align: left;
-    color: black;
+    color:#2c3f14;
   }
   
   .post h2 {
     text-align: left;
     font-family: sans-serif;
     font-size: 30px;
-    color: rgb(7, 7, 10);
+    color: #2c3f14;
   }
     
   .post .upvote {
     display: flex;
     gap: 5px;
     font-size: 20px;;
-    color:rgb(17, 16, 16);
+    color:#2c3f14;
   }
   
   .post .upvote-button {

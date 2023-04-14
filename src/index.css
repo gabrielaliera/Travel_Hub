@@ -21,13 +21,13 @@ h1,h2,h3 {
 body {
   margin: 0;
   color: #333;
-  background: #f2f2f2;
+  background: #f3f2ef;
 }
 
 .post-page {
   width: 100%;
   padding: 10px 20px;
-  background: #fff;
+  background:#f3f2ef;
   box-sizing: border-box;
   border-radius: 6px;
   position: relative;

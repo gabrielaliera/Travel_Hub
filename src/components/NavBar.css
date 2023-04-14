@@ -3,27 +3,22 @@ nav {
     justify-content: space-between;
     align-items: center;
     background: var(--primary);
-    padding: 10px 5% 10px 20px;
+    padding: 10px 10px 10px 20px;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-  }
-  
-nav li {
-    margin-right: 10px;
-}
 
 nav a {
-    color: #199d6f;
-    margin: 10px 20px 10px 0;
-    display: inline-block;
+    color: #2c3f14;
+    margin: 10px 5px 10px 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    
 }
 
 nav h1 {
-    color: #aa2222;
-    margin-left: 10%;
+    color: #2c3f14;
     font-size: 50px;
 }
 
@@ -35,8 +30,19 @@ nav .search-input {
     height: 30px;
 }
 
-nav span {
-    margin-right: 30px;
-    font-weight: bold;
-    color: #a51b1b;
+nav .side-links{
+    display: flex;
+}
+
+
+nav .buttons{
+    background-color: #4bc18a;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-left: 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer; 
+    justify-content: center;
+    text-align: center;
 }
