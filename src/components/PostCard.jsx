@@ -10,8 +10,10 @@ const PostCard = ({id, title, content, date, imageURL, upvote}) => {
     <div className="post">
         <p>Posted by You - {date}</p>
         <h2>{title}</h2>
-        <div>
-         {upvote} <ThumbUpOutlinedIcon/>
+        <p>{content}</p>
+        <br/>
+        <div className="upvote">
+         <ThumbUpOutlinedIcon/> {upvote} votes 
         </div>
         
     </div>
