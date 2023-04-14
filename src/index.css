@@ -97,3 +97,7 @@ body {
   transform: translateY(3px);
 }
 
+
+.post-list a{
+  text-decoration: none;
+}
