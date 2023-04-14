@@ -7,10 +7,13 @@ const NavBar = () => {
   return (
     <nav>
       <h1>Travel Hub</h1>
-      <div>
+      
+      <div className="side-links">
         <Link to="/">Home</Link>
-        <Link to='/create'> Create Post</Link>
-      </div>
+        <div className="buttons">
+          <Link to='/create'>Create Post</Link>        
+        </div>
+      </div>     
     </nav>
   )
 }
