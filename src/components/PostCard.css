@@ -1,10 +1,4 @@
 .post {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "date image"
-      "title image"
-      "content image";
     width: 100%;
     padding: 10px 20px;
     background: #fff;
@@ -13,22 +7,12 @@
     position: relative;
     margin: 12px 20px 12px 20px;
     justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
+
   
-  .post a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  .post img {
-    grid-area: image;
-    max-height: 300px;
-    max-width: 100%;
-    margin-bottom: 1rem;
-  }
-  
+   
   .post p {
-    grid-area: date;
     text-align: left;
     color: black;
   }
@@ -36,39 +20,15 @@
   .post h2 {
     text-align: left;
     font-family: sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     color: rgb(7, 7, 10);
-    grid-area: title;
   }
-  
-  .post h3 {
-    text-align: left;
-    font-family: sans-serif;
-    font-size: 15px;
-    color: rgb(7, 7, 10);
-    grid-area: content;
-  }
-  .post i {
-    color: #bbb;
-    margin-left: 10px;
-    font-size: 1.2em;
-    padding: 6px;
-    background: #eee;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  .post .buttons {
-    width: 100%;
-    margin: 20px 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .post .upvotes {
+    
+  .post .upvote {
     display: flex;
     gap: 5px;
+    font-size: 20px;;
+    color:rgb(17, 16, 16);
   }
   
   .post .upvote-button {
@@ -79,9 +39,5 @@
   
   .post .upvote-button:active {
     transform: translateY(3px);
-  }
-  
-  .post-content {
-    grid-area: content;
   }
   
