@@ -1,51 +1,69 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient'
 
 
 const CreatePost = ({userID}) => {
 
-    const [post, setPost] = useState({title: "", content: "", image_url: ""})
+    const navigate = useNavigate();
+    const [title, setTitle] = useState("")
+    const [content,setContent] = useState("")
+    const [imageURL, setImageURL] = useState("")
+    //const [post, setPost] = useState({title: "", content: "", image_url: ""})
 
-    const handleChange = (event) => {
-        const {name, value} = event.target;
-        setPost( (prev) => {
-            return {
-                ...prev,
-                [name]:value,
-            }
-        })
-    }
+  
 
     const createPost = async (event) => {
         event.preventDefault();
     
-       await supabase
+       const{data, error} = await supabase
         .from('Posts')
         .insert({userID: userID,
-                 title: post.title, 
-                 content: post.content, 
-                 image_url: post.image_url})
-        .select();
+                 title: title, 
+                 content: content, 
+                 image_url: imageURL,
+                 upvotes:0,
+                 comments:[]})
     
-        window.location = "/";
+        if(error){
+            console.log(error)
+        }
+        if(data){
+            console.log(data);
+            navigate("/");
+        }
+    
     }
 
     return (
         <div>
-            <form>
-                <label >Title</label> <br />
-                <input type="text" id="title" name="title" value ={post.title} onChange={handleChange}/><br />
-                <br/>
-
-                <label >Content</label><br />
-                <input type="text" id="content" name="content" value ={post.content} onChange={handleChange}/><br />
-                <br/>
-
-                <label >Image URL</label><br />
-                <input type="url" id="image_url"  name="image_url" value ={post.image_url} onChange={handleChange}/>              
-                <br/>
+            <form onSubmit={createPost}>
+                <input 
+                    type="text"
+                    id="title" 
+                    name="title" 
+                    placeholder='Title'
+                    value ={title} 
+                    onChange={(e) => setTitle(e.target.value)}
+                />
+                <textarea
+                    type="text"
+                    id="content"
+                    name="content"
+                    placeholder="Content"
+                    value ={content}
+                    onChange={(e) => setContent(e.target.value)}
+                />
+                <input 
+                    type="url" 
+                    id="image_url"  
+                    name="image_url"
+                    placeholder="Image URL"
+                    value ={imageURL} 
+                    onChange={(e) => setImageURL(e.target.value)}
+                />              
                
-                <input type="submit" value="Submit" onClick={createPost} />
+                <button>Create Post</button>
             </form>
         </div>
     )
