@@ -23,7 +23,7 @@ const Home = () => {
 
 
     return(
-        <div>
+        <div className="post-list">
           {posts && posts.length > 0 ?
                 posts.map((post,index) => 
                 <Link to={"/post/" + post.id}>
