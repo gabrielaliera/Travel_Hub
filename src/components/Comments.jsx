@@ -2,9 +2,8 @@ import { useState } from 'react'
 import { supabase } from "../supabaseClient";
 
 
-const Comments = ({}) => {
+const Comments = ({comments, userID, setPost, postID}) => {
 
-  const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState("")
   
   const handleAddComment = async (e) => {
@@ -12,34 +11,42 @@ const Comments = ({}) => {
 
 
     const { data, error } = await supabase
-      .from("posts")
-      .update({ comments: [...comments, { author: userId, text: newComment, createdAt: new Date() }] })
-      .eq("id", postId);
+      .from("Posts")
+      .update({ comments: [...comments, { commenter: userID, text: newComment, createdAt: new Date().toISOString() }] })
+      .eq("id", postID);
 
     setPost((post) => ({
       ...post,
-      comments: [...comments, { author: userId, text: newComment, createdAt: new Date() }],
+      comments: [...comments, { commenter: userID, text: newComment, createdAt: new Date().toISOString()}],
     }));
+  
+    if (error) {
+      console.log("error: ", error);
+    }
+
+    if (data) {
+      console.log("data comment: ", data)    
+      setNewComment("");
+    }
   };
 
   return (
     <div className="post">
         {comments ? 
-            comments.map((comment) => (
-                <div>
-                    <p>{comment.text}</p>
-                    <p>You on {comment.createdAt}</p>
+            comments.map((comment, index) => (
+                <div key={index}>
+                   You {comment.commenter} : {comment.text} on {comment.createdAt}
                 </div>
         )) : null}
         <div>
             <form onSubmit={handleAddComment}>
-            <input
-                className="comment-input"
-                type="text"
-                placeholder="Leave a comment..."
-                value={newComment}
-                onChange={(e) => setNewComment(e.target.value)}
-            />
+              <input
+                  className="comment-input"
+                  type="text"
+                  placeholder="Leave a comment..."
+                  value={newComment}
+                  onChange={(e) => setNewComment(e.target.value)}
+              />
             </form>
         </div>
     </div>
