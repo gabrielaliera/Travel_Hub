@@ -23,8 +23,6 @@ const PostPage =  ({userID}) => {
           
             // Current post data
             if (data) {
-                console.log("data call")
-                console.log(data);
               setPost(data[0]);
             }
             setLoading(false);
@@ -46,7 +44,7 @@ const PostPage =  ({userID}) => {
                 <div className="upvotes">
                   <ThumbUpOutlinedIcon/> {`  ${upvote}  votes`}
                 </div>
-                <Comments/>
+                <Comments userID={userID} comments={post.comments} setPost={setPost} postID={post.id}/>
             </div>
         )
     }
