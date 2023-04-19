@@ -9,9 +9,7 @@ const CreatePost = ({userID}) => {
     const [title, setTitle] = useState("")
     const [content,setContent] = useState("")
     const [imageURL, setImageURL] = useState("")
-    //const [post, setPost] = useState({title: "", content: "", image_url: ""})
-
-  
+ 
 
     const createPost = async (event) => {
         event.preventDefault();
