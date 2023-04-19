@@ -3,7 +3,7 @@ import PostCard from "../components/PostCard";
 import {Link} from 'react-router-dom';
 import { supabase } from "../supabaseClient";
 
-const Home = () => {
+const Home = ({userID}) => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -28,12 +28,8 @@ const Home = () => {
                 posts.map((post,index) => 
                 <Link to={"/post/" + post.id}>
                     <PostCard key={post.id}
-                        id={post.id}
-                        title={post.title}
-                        content={post.content}
-                        date={post.created_at}
-                        imageURL={post.image_url}
-                        upvote={post.upvotes}/>
+                        userID={userID}
+                        post={post}/>
                 </Link>
                 ) : null}
         </div>
