@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { supabase } from "../supabaseClient";
+import {parseDate} from "../utils/parseDate" 
 
 
 const Comments = ({comments, userID, setPost, postID}) => {
@@ -35,7 +36,8 @@ const Comments = ({comments, userID, setPost, postID}) => {
         {comments ? 
             comments.map((comment, index) => (
                 <div key={index}>
-                   You {comment.commenter} : {comment.text} on {comment.createdAt}
+                   {comment.commenter == userID ? "You" : "@" + comment.commenter} | {parseDate(comment.createdAt)}
+                   <br/>{comment.text}
                 </div>
         )) : null}
         <div>
