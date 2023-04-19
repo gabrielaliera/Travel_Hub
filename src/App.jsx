@@ -34,7 +34,7 @@ function App() {
     <>
       <NavBar/>
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Home userID={userID}/>}/>
         <Route path="/create" element={<CreatePost userID={userID}/>}/>
         <Route path="/post/:id" element={<PostPage userID={userID}/>} />
       </Routes>    
