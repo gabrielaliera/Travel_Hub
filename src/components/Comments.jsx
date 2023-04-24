@@ -21,6 +21,7 @@ const Comments = ({comments, userID, setPost, postID}) => {
       comments: [...comments, { commenter: userID, text: newComment, createdAt: new Date().toISOString()}],
     }));
   
+    
     if (error) {
       console.log("error: ", error);
     }
