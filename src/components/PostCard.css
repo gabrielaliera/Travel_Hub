@@ -10,6 +10,13 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
 
+  .post:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  .post.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  
   
    
   .post p {
