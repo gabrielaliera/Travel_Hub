@@ -1,15 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import "./NavBar.css"
+import Logo from "../assets/logo3.png" 
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-const NavBar = () => {
+
+const NavBar = ({search, setSearch}) => {
+
 
   return (
     <nav>
-      <h1>Travel Hub</h1>
-      
+       <Link to="/">
+          <div className='logo'> 
+              <img src={Logo} alt="The Explorer's Hub Logo" width="300" height="200"/>
+              <p>The Explorer's Hub</p>
+          </div>
+      </Link>
       <div className="side-links">
-        <Link to="/">Home</Link>
+          <input
+            className='search-bar'
+            type="text"
+            placeholder="Search destinations"
+            onChange={(e) => setSearch(e.target.value)}
+          />
         <div className="buttons">
           <Link to='/create'>Create Post</Link>        
         </div>

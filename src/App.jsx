@@ -10,31 +10,17 @@ import './App.css'
 function App() {
 
   const [userID] = useState("user" + Math.floor(100000 + Math.random() * 900000));
-  const [posts, setPosts] = useState([]);
-  
-  useEffect(() => {
-    
-    // READ all post from table
-    const fetchPosts = async () => {
-      const {data} = await supabase
-      .from('Posts')
-      .select()
-      .order('created_at', { ascending: true })
-
-      // set state of posts
-      setPosts(data)
-
-    }
-
-    fetchPosts()
-
-  }, []);
+  const [search, setSearch] = useState("");
+  const [orderBy, setOrderBy] = useState("created_at");
   
   return (
     <>
-      <NavBar/>
+      <NavBar search={search} setSearch={setSearch}/>
       <Routes>
-        <Route path="/" element={<Home userID={userID}/>}/>
+        <Route path="/" element={<Home userID={userID} 
+                                       orderBy={orderBy} 
+                                       setOrderBy={setOrderBy}
+                                       search={search}/>}/>
         <Route path="/create" element={<CreatePost userID={userID}/>}/>
         <Route path="/post/:id" element={<PostPage userID={userID}/>} />
       </Routes>    
