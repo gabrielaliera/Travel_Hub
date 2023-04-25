@@ -15,7 +15,17 @@ nav {
 .logo {
     display: flex;
     align-items: center;
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
  }
+ .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
   
 .logo img {
     height: 60px; /* adjust as needed */
@@ -31,12 +41,14 @@ nav {
     font-family: 'IndieFlower','Times New Roman', cursive;
 }
 
+ 
+
 .search-bar{
-    padding-left: 10px;
-    border-radius: 15px;
-    width: 25%;
+    padding-left: 15px;
+    border-radius: 25px;
+    width: 300px;
     font-size: 16px;
-    height: 30px;
+    height: 45px;
     border: solid #4bc18a;
 
 }
@@ -65,7 +77,7 @@ nav h1 {
 
 nav .search-input {
     padding-left: 10px;
-    border-radius: 15px;
+    border-radius: 25px;
     width: 25%;
     font-size: 16px;
     height: 30px;
@@ -73,6 +85,13 @@ nav .search-input {
 
 nav .side-links{
     display: flex;
+}
+
+.buttons:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+.buttons.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
 
@@ -87,3 +106,5 @@ nav .buttons{
     justify-content: center;
     text-align: center;
 }
+
+
