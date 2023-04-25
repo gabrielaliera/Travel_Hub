@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import "./NavBar.css"
 import Logo from "../assets/logo3.png" 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-
-const NavBar = ({search, setSearch}) => {
+const NavBar = ({userID,search, setSearch}) => {
 
 
   return (
@@ -25,6 +25,9 @@ const NavBar = ({search, setSearch}) => {
           />
         <div className="buttons">
           <Link to='/create'>Create Post</Link>        
+        </div>
+        <div className='user-profile'>
+          <AccountCircleIcon/>{userID}
         </div>
       </div>     
     </nav>
