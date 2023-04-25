@@ -107,4 +107,12 @@ nav .buttons{
     text-align: center;
 }
 
+.user-profile{
+   
+    margin-left: 5px;
+    background-color: #4bc18a;
+    border-radius: 25px;
+    padding:10px 20px;
+    height: 100%;
+}
 
