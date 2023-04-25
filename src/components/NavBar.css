@@ -1,11 +1,52 @@
+@font-face {
+    font-family: 'IndieFlower';
+    src: url('../fonts/IndieFlower-Regular.ttf') format('truetype');
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: var(--primary);
     padding: 10px 10px 10px 20px;
+    margin-bottom: 30px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+ }
+  
+.logo img {
+    height: 60px; /* adjust as needed */
+    width: 20%;
+    margin-right: 10px; /* adjust as needed */
+ }
+  
+.logo p {
+    margin: 0;
+    font-size: 50px; /* adjust as needed */
+    font-weight: bold;
+    color: #4bc18a;
+    font-family: 'IndieFlower','Times New Roman', cursive;
+}
+
+.search-bar{
+    padding-left: 10px;
+    border-radius: 15px;
+    width: 25%;
+    font-size: 16px;
+    height: 30px;
+    border: solid #4bc18a;
+
+}
+
+
+input::placeholder:before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f3c5";
+    margin-right: 5px;
+  }
 
 nav a {
     color: #2c3f14;
