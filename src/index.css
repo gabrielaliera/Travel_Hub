@@ -144,10 +144,11 @@ form textarea {
 form button {
   background: var(--primary);
   font-size: 16px;
+  background-color: #4bc18a;
   color: #fff;
   border: 0;
-  border-radius: 6px;
+  border-radius: 15px;
   padding: 6px 8px;
-  font-family: "Poppins";
   cursor: pointer;
+  width: 100%;
 }
