@@ -25,12 +25,6 @@ The following REQUIRED features are completed:
 - [] A previously created post can be deleted from its post page
 - [ ] Upon launching the web app, the user is assigned a random user ID. It will be associated with all posts and comments that they make and displayed on them
 
-## Project Demo
-
-🌐 [See the project deployed here!]()
-
-![usage of crewmates project in gif form](readme_demo.gif)
-
 ## Setup
 
 ### Dependencies
